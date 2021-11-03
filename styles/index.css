@@ -4,6 +4,7 @@ body {
     margin-left: 30px;
     margin-right: 30px;
     width: 100%;
+    max-width: 2000px;
     max-height: 100vh;
     font-family: 'Source Sans Pro', sans-serif;
     overflow-x: hidden;
@@ -12,26 +13,40 @@ body {
 header {
     display: flex;
     max-width: 95%;
-    margin: 2em;
+    margin: 30px;
     justify-content: flex-start;
     align-items: center;
     }
     .logo {
         margin-right: 50px;
+        cursor: pointer;
     }
-    .menu-icon {
-        visibility: hidden;
-    }
-.topnav a {
-    font-family: 'Source Sans Pro', sans-serif;
+.topnav a:hover {
+    color: #C6C6C6;
+}
+#hamnav {
+    width: 100%;
+    background: #000;  }
+
+#hamitems {
+    display: flex;
+    max-width: 95%;
+    margin: 30px;
+    justify-content: flex-start;
+}
+#hamitems a {
+    padding: 10px;
     color: white;
-    text-align: center;
     text-decoration: none;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
     margin: 1em;
     padding: 1em;
 }
-.topnav a:hover {
+#hamitems a:hover {
     color: #C6C6C6;
+}
+#hamnav label, #hamburger { display: none;
 }
 h1 {
     font-family: 'Poppins', sans-serif;
@@ -46,8 +61,6 @@ section  {
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
-    /*max-width: 90%;
-    max-height: 80vh;*/
 }
 .text {
     display: inline-flex;
@@ -84,18 +97,26 @@ img {
         visibility: hidden;
     }
 }
-@media screen and (max-width:550px) {
-    .topnav {
-        visibility: hidden;
+@media screen and (max-width: 768px){
+    #hamitems a {
+    box-sizing: border-box;
+    display: block;
+    width: 80%;
+    border-top: 1px solid #C6C6C6;
     }
-    .menu-icon {
-        visibility: visible;
+    #hamnav label {
+    display: inline-block;
+    color: #C6C6C6;
+    background: black;
+    font-style: normal;
+    font-size: 1.2em;
+    padding: 10px;
+    cursor: pointer;
     }
+    #hamitems { display: none; }
+    #hamnav input:checked ~ #hamitems { display: block; }
     h1 {
-        font-size: 36px;
-    }
+        font-size: 36px;}
     p {
-        font-size: 12px;
-    }
-
+        font-size: 12px;}
 }
